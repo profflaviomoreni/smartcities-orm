@@ -1,15 +1,18 @@
 package br.com.fiap.smartcities.testes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
+import br.com.fiap.smartcities.domain.Cliente;
 import br.com.fiap.smartcities.domain.Estabelecimento;
-import br.com.fiap.smartcities.domain.TipoEstabelecimento;
 
-public class EstabInserirTest {
+public class ClienteInserirTest {
 
 	public static void main(String[] args) {
-		
+
 		EntityManager em = null;
 
 		try { 
@@ -17,18 +20,14 @@ public class EstabInserirTest {
 			em = Persistence.createEntityManagerFactory("smartcities-orm").createEntityManager();
 			em.getTransaction().begin();
 			
-			TipoEstabelecimento tipo = new TipoEstabelecimento(1,null);
 			
-			Estabelecimento estab1 = new Estabelecimento();
-			estab1.setNome("Loja 1");
-			estab1.setTipo(tipo);
-			em.persist(estab1);
+			// TODO Cuidado com o ID dos Estabelecimento - pode ser que o ID da sua tabela seja diferente de 21 e 22;
+			List<Estabelecimento> listaEstab = new ArrayList<>();
+			listaEstab.add(new Estabelecimento(21));
+			listaEstab.add(new Estabelecimento(22));
 			
-			Estabelecimento estab2 = new Estabelecimento();
-			estab2.setNome("Loja 2");
-			estab2.setTipo(tipo);
-			em.persist(estab2);
-			
+			Cliente cliente = new Cliente("Fiap", listaEstab);
+			em.persist(cliente);
 			
 			em.getTransaction().commit();
 			

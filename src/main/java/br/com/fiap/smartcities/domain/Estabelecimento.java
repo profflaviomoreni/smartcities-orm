@@ -1,6 +1,7 @@
 package br.com.fiap.smartcities.domain;
 
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -37,6 +39,23 @@ public class Estabelecimento {
 	@JoinColumn(name = "id_tipo_estabelecimento")
 	@ManyToOne
 	private TipoEstabelecimento tipo;
+	
+	
+	@ManyToMany(mappedBy="estabelecimentos")
+	private List<Cliente> clientes;
+
+	public Estabelecimento() {
+		super();
+	}
+	
+	
+
+	public Estabelecimento(Integer id) {
+		super();
+		this.id = id;
+	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -62,14 +81,20 @@ public class Estabelecimento {
 		this.dataCriacao = dataCriacao;
 	}
 
-	
-	
 	public TipoEstabelecimento getTipo() {
 		return tipo;
 	}
 
 	public void setTipo(TipoEstabelecimento tipo) {
 		this.tipo = tipo;
+	}
+	
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
 
 	@Override
@@ -80,5 +105,6 @@ public class Estabelecimento {
 	
 	
 }
+
 
 
