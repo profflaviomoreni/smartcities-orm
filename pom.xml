@@ -22,11 +22,10 @@
             <version>5.4.32.Final</version>
         </dependency>
 		<dependency>
-			<groupId>oracle</groupId>
-			<artifactId>jdbc-driver</artifactId>
-			<version>12</version>
-			<scope>system</scope>
-			<systemPath>C:/oracle-lib/ojdbc8.jar</systemPath>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>RELEASE</version>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 	<build>
