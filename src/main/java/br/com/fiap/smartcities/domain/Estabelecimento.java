@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -31,6 +33,10 @@ public class Estabelecimento {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "dh_criacao")
 	private Calendar dataCriacao;
+	
+	@JoinColumn(name = "id_tipo_estabelecimento")
+	@ManyToOne
+	private TipoEstabelecimento tipo;
 
 	public Integer getId() {
 		return id;
@@ -56,12 +62,23 @@ public class Estabelecimento {
 		this.dataCriacao = dataCriacao;
 	}
 
+	
+	
+	public TipoEstabelecimento getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoEstabelecimento tipo) {
+		this.tipo = tipo;
+	}
+
 	@Override
 	public String toString() {
-		return "Estabelecimento [id=" + id + ", nome=" + nome + ", dataCriacao=" + dataCriacao + "]";
+		return "Estabelecimento [id=" + id + ", nome=" + nome + ", dataCriacao=" + dataCriacao + ", tipo=" + tipo + "]";
 	}
-	
-	
+
 	
 	
 }
+
+

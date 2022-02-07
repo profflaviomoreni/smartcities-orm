@@ -3,13 +3,11 @@ package br.com.fiap.smartcities.testes;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
-import br.com.fiap.smartcities.domain.Estabelecimento;
 import br.com.fiap.smartcities.domain.TipoEstabelecimento;
 
-public class EstabInserirTest {
+public class TipoEstabInserirTest {
 
 	public static void main(String[] args) {
-		
 		EntityManager em = null;
 
 		try { 
@@ -17,12 +15,17 @@ public class EstabInserirTest {
 			em = Persistence.createEntityManagerFactory("smartcities-orm").createEntityManager();
 			em.getTransaction().begin();
 			
-			TipoEstabelecimento tipo = new TipoEstabelecimento(1,null);
+			TipoEstabelecimento tipo1 = new TipoEstabelecimento();
+			tipo1.setNome("Loja de Rua");
+			em.persist(tipo1);
 			
-			Estabelecimento estab = new Estabelecimento();
-			estab.setNome("Escolinha 1");
-			estab.setTipo(tipo);
-			em.persist(estab);
+			TipoEstabelecimento tipo2 = new TipoEstabelecimento();
+			tipo2.setNome("Loja de Shopping");
+			em.persist(tipo2);
+			
+			TipoEstabelecimento tipo3 = new TipoEstabelecimento();
+			tipo3.setNome("Kiosque");
+			em.persist(tipo3);
 			
 			em.getTransaction().commit();
 			
@@ -36,7 +39,6 @@ public class EstabInserirTest {
 				em.close();
 			}
 		}
-		
 	}
 
 }
