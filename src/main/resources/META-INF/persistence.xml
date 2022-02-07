@@ -8,8 +8,8 @@
 			<property name="hibernate.hbm2ddl.auto" value="create"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-			<property name="javax.persistence.jdbc.user" value="pf0954"/>
-			<property name="javax.persistence.jdbc.password" value="fiap"/>
+			<property name="javax.persistence.jdbc.user" value=""/>
+			<property name="javax.persistence.jdbc.password" value=""/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl"/>
 		</properties>	
 	</persistence-unit>
