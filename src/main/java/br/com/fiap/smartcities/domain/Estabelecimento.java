@@ -55,6 +55,13 @@ public class Estabelecimento {
 	public void setDataCriacao(Calendar dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
+
+	@Override
+	public String toString() {
+		return "Estabelecimento [id=" + id + ", nome=" + nome + ", dataCriacao=" + dataCriacao + "]";
+	}
+	
+	
 	
 	
 }
