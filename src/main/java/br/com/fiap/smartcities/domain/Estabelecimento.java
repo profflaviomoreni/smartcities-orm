@@ -55,6 +55,23 @@ public class Estabelecimento {
 		this.id = id;
 	}
 
+	public Estabelecimento(String nome, Calendar dataCriacao, TipoEstabelecimento tipo) {
+		super();
+		this.nome = nome;
+		this.dataCriacao = dataCriacao;
+		this.tipo = tipo;
+	}
+	
+	public Estabelecimento(Integer id, String nome, Calendar dataCriacao, TipoEstabelecimento tipo,
+			List<Cliente> clientes) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.dataCriacao = dataCriacao;
+		this.tipo = tipo;
+		this.clientes = clientes;
+	}
+
 
 
 	public Integer getId() {
@@ -97,10 +114,14 @@ public class Estabelecimento {
 		this.clientes = clientes;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Estabelecimento [id=" + id + ", nome=" + nome + ", dataCriacao=" + dataCriacao + ", tipo=" + tipo + "]";
+		return "Estabelecimento [id=" + id + ", nome=" + nome + ", tipo=" + tipo + "]";
 	}
+
+	
 
 	
 	

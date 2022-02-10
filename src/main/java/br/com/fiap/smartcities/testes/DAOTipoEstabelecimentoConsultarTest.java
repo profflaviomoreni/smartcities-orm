@@ -26,7 +26,6 @@ public class DAOTipoEstabelecimentoConsultarTest {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			em.getTransaction().rollback();
 		} finally {
 			if (em != null) {
 				em.close();

@@ -29,6 +29,15 @@ public class TipoEstabelecimento {
 	public TipoEstabelecimento() {
 		super();
 	}
+	
+	
+
+	public TipoEstabelecimento(Integer id) {
+		super();
+		this.id = id;
+	}
+
+
 
 	public TipoEstabelecimento(Integer id, String nome) {
 		super();

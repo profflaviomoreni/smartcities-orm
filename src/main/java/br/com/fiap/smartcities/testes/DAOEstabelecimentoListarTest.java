@@ -2,10 +2,11 @@ package br.com.fiap.smartcities.testes;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
-import br.com.fiap.smartcities.dao.TipoEstabelecimentoDAO;
-import br.com.fiap.smartcities.domain.TipoEstabelecimento;
 
-public class DAOTipoEstabelecimentoListarTest {
+import br.com.fiap.smartcities.dao.EstabelecimentoDAO;
+import br.com.fiap.smartcities.domain.Estabelecimento;
+
+public class DAOEstabelecimentoListarTest {
 
 	public static void main(String[] args) {
 
@@ -15,13 +16,14 @@ public class DAOTipoEstabelecimentoListarTest {
 
 			em = Persistence.createEntityManagerFactory("smartcities-orm").createEntityManager();
 
-			TipoEstabelecimentoDAO dao = new TipoEstabelecimentoDAO(em);
+			EstabelecimentoDAO dao = new EstabelecimentoDAO(em);
 
-			System.out.println("\nTipos de Estabelecimento:"); 
-			for (TipoEstabelecimento entidade : dao.listar()) { 
-				System.out.println(" > " + entidade.getId() + " - " + entidade.getNome()); 
+			System.out.println("\nEstabelecimento:"); 
+			for (Estabelecimento entidade : dao.listar()) { 
+				System.out.println(" " + entidade); 
 			}
 
+			dao.commit();
 
 		} catch (Exception e) {
 			e.printStackTrace();
