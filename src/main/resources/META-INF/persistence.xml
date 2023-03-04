@@ -6,9 +6,14 @@
 		<class>br.com.fiap.smartcities.domain.TipoEstabelecimento</class>
 		<class>br.com.fiap.smartcities.domain.Cliente</class>
 		<class>br.com.fiap.smartcities.domain.LeadsVenda</class>
+		<class>br.com.fiap.smartcities.domain.ClienteBase</class>
+		<class>br.com.fiap.smartcities.domain.ClientePF</class>
+		<class>br.com.fiap.smartcities.domain.ClientePJ</class>
+		<class>br.com.fiap.smartcities.domain.ClienteGov</class>
+		
 		<properties>
 			<property name="hibernate.show_sql" value="true"/>
-			<property name="hibernate.hbm2ddl.auto" value="create"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
 			<property name="javax.persistence.jdbc.user" value=""/>
