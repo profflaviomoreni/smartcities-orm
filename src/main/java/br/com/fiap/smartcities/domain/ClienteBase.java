@@ -8,8 +8,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public class ClienteBase {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class ClienteBase {
 
 	@Id
 	private UUID idCliente;

@@ -13,8 +13,8 @@ public class ClienteGeralTest {
 
 	public static void main(String[] args) {
 
-		//inserir();
-		consultar();
+		inserir();
+		//consultar();
 	}
 
 	

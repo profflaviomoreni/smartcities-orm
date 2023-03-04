@@ -19,8 +19,7 @@ public class NotaFiscalTest {
 	
 	public static void pesquisar() {
 		
-		
-		UUID notaId = UUID.fromString("F372E975-C635-472C-96D1-43F8D109A658");
+		UUID notaId = UUID.fromString("7BC742B0-D40E-4CBF-88E3-62C5D2A3B088");
 		
 		EntityManager em = null;
 		em = Persistence.createEntityManagerFactory("smartcities-orm").createEntityManager();
@@ -39,7 +38,7 @@ public class NotaFiscalTest {
 		em = Persistence.createEntityManagerFactory("smartcities-orm").createEntityManager();
 		
 		//Definindo o cliente 
-		ClienteBase clienteGov = em.find(ClienteGov.class, UUID.fromString("FBAC84C6-0636-4509-9D92-0EFEBBC830D4") );
+		ClienteBase clienteGov = em.find(ClienteGov.class, UUID.fromString("D639208D-347F-413F-BB1B-DC469961E1D0") );
 		
 		
 		em.getTransaction().begin();
