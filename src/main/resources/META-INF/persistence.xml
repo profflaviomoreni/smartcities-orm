@@ -7,9 +7,6 @@
 		<class>br.com.fiap.smartcities.domain.Cliente</class>
 		<class>br.com.fiap.smartcities.domain.LeadsVenda</class>
 		<class>br.com.fiap.smartcities.domain.ClienteBase</class>
-		<class>br.com.fiap.smartcities.domain.ClientePF</class>
-		<class>br.com.fiap.smartcities.domain.ClientePJ</class>
-		<class>br.com.fiap.smartcities.domain.ClienteGov</class>
 		
 		<properties>
 			<property name="hibernate.show_sql" value="true"/>
